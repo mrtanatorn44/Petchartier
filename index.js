@@ -9,7 +9,9 @@ const commands = require('./help');
 const dotenv = require('dotenv');
 const axios = require('axios'); 	// New line that we added
 
-
+// COMMAND case uptime
+let uptime_toggle = false;
+var count_uptime_hour = 0;
 
 let bot = new Client({
   intents: ["GUILDS", "GUILD_MESSAGES"],
@@ -65,11 +67,53 @@ bot.on('message', async message => {
       }
     }
 
+    let uptime = false;
     switch (command) {
+
+      case 'porn':
+        message.channel.send({ content: 'No horny! :point_left:', files: ['./images/nohorny.png'] });
+        break;
+        
+      case 'uptimenow':
+        
+        let totalSeconds = (bot.uptime / 1000);
+        let days = Math.floor(totalSeconds / 86400);
+        totalSeconds %= 86400;
+        let hours = Math.floor(totalSeconds / 3600);
+        totalSeconds %= 3600;
+        let minutes = Math.floor(totalSeconds / 60);
+        let seconds = Math.floor(totalSeconds % 60);
+
+        let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+        message.channel.send({ content: `[Uptime] ${uptime} :white_check_mark:`});
+
+        break;
+      
+      case 'uptime':
+
+        var checkminutes = 60, checkthe_interval = checkminutes * 60 * 1000; 
+        //This checks every 10 minutes, change 10 to whatever minute you'd like
+        
+        setInterval(function() {
+          count_uptime_hour += 1;
+          if (uptime_toggle) {
+            message.channel.send({ content: `[Uptime] ${count_uptime_hour} hours :white_check_mark:`});      
+          }
+        }, checkthe_interval);
+
+        if (uptime_toggle) {
+          uptime_toggle = false;
+          message.channel.send({ content: '[Uptime notification] OFF'});       
+        } else {
+          uptime_toggle = true;
+          message.channel.send({ content: '[Uptime notification] ON'});
+        }
+
+        break;
 
       case 'ping':
         msg = await message.reply('Pinging...');
-        await msg.edit(`PONG! Message round-trip took ${Date.now() - msg.createdTimestamp}ms.`)
+        await msg.edit(`[PING] ${Date.now() - msg.createdTimestamp}ms.`)
         break;
       
       case 'tawan':
