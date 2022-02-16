@@ -1,5 +1,24 @@
 # discord.js-heroku
 
+# Roadmap
+- Crypto Price ✅ 
+    - easy to use ❌ 
+    - ui graph ❌ 
+       https://thesmartcoder.dev/discord-bot-with-javascript/
+       https://www.coingecko.com/en/api/documentation
+- Timer ✅ 
+    - minute has limit ❌ 
+    - alarm with sounds ❌ 
+- Game Create
+- Google Search Engine
+- Translator ✅ 
+    - Not Best API
+- Meme [hard to find good API]
+- Covid Report
+- Hot Daily News
+- Move Together
+
+
 > An in-depth guide on deploying your
 [Discord.js](https://github.com/hydrabolt/discord.js) bot on Heroku
 
