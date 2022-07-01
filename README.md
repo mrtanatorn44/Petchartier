@@ -1,5 +1,8 @@
 # discord.js-heroku
 
+## About
+This is personal discord bot
+
 # Roadmap
 - Crypto Price ✅ 
     - easy to use ❌ 
@@ -18,7 +21,6 @@
 - Hot Daily News
 - Move Together
 
-
 > An in-depth guide on deploying your
 [Discord.js](https://github.com/hydrabolt/discord.js) bot on Heroku
 
@@ -26,8 +28,6 @@
 such as [discord.io](https://github.com/izy521/discord.io),
 [eris](https://github.com/abalabahaha/eris), and
 [discordie](https://github.com/qeled/discordie).
-
-## About
 
 ### About Heroku
 
